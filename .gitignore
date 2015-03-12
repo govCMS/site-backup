@@ -1,3 +1,4 @@
 .idea
 govcms.aliases.drushrc.php
 backups
+logs
