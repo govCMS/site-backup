@@ -1,4 +1,14 @@
 #!/bin/bash
+
+if [[ $# -ne 2 ]]; then
+    echo "Invalid arguments, script requires 2 arguments"
+    echo "example: ./site-backup.sh user@username.com my_api_key_here"
+    exit 1
+else
+    USER=$1
+    KEY=$2
+fi
+
 start=`date +%s`
 #Location of Script
 SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -8,12 +18,6 @@ BASE_DEST_DIR=/mnt/tmp/backups/
 
 #URL for Cloud API
 URL=https://www.govcms.acsitefactory.com/api/v1/sites?limit=200
-
-#Username for Cloud API
-USER="gov hosting"
-
-#API Key for Cloud API
-KEY=key_here
 
 #Drush Aliases File
 END_FILE=${SCRIPT_DIR}/govcms.aliases.drushrc.php
