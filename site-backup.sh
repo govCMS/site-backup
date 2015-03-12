@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Check that we have 2 arguments, the user and the api key
 if [[ $# -ne 2 ]]; then
     echo "Invalid arguments, script requires 2 arguments"
     echo "example: ./site-backup.sh user@username.com my_api_key_here"
@@ -49,7 +50,7 @@ echo $START_FILE >> $END_FILE
 for domain in $SITE_ARRAY
 do
     echo -e "Writing domain [$domain] into [$END_FILE]\n"
-    echo "$TEMPLATE" | sed -r "s/aliasname/$domain/g" >> $END_FILE    
+    echo "$TEMPLATE" | sed "s/aliasname/$domain/g" >> $END_FILE
     echo "Written domain [$domain] into [$END_FILE]"
 done
 echo "Aliases File finished writing"
