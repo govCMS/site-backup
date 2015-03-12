@@ -9,3 +9,5 @@ This script takes 2 arguments, the first is the username from acquia cloud API y
 
 e.g.
 ./site-backup.sh "user name" FSDJKSDNEWH432hkjfd@!#jkdnjkfhwkfe
+
+Note: Recommend running this script as ./site-backup.sh "user name" api_key >> /log/file/here.log
