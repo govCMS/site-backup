@@ -68,7 +68,7 @@ do
     mkdir -p $SCRIPT_DIR/backups/$DATE/$url/
     chmod -R 777 $SCRIPT_DIR/backups/
     echo "Retrieving $url dump"
-    drush -y rsync @$url:${BASE_DEST_DIR}${url}.tar.gz $SCRIPT_DIR/backups/$DATE/$url/
+    drush -y rsync --remove-source-files @$url:${BASE_DEST_DIR}${url}.tar.gz $SCRIPT_DIR/backups/$DATE/$url/
     echo "Retrieved $url dump"
 done
 
